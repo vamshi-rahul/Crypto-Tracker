@@ -1,0 +1,17 @@
+# Node modules
+crypto_trackerfrontend/node_modules/
+
+# Environment variables
+backend/.env
+
+# Python virtual environment
+crypto_trackerbackend/venv/
+
+# Log files
+*.log
+
+# MacOS files
+.DS_Store
+
+# VSCode settings
+.vscode/
