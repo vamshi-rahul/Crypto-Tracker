@@ -1,11 +1,11 @@
 # Node modules
-crypto_trackerfrontend/node_modules/
+crypto_tracker_frontend/node_modules/
 
 # Environment variables
-backend/.env
+crypto_tracker_backend/.env
 
 # Python virtual environment
-crypto_trackerbackend/venv/
+crypto_tracker_backend/venv/
 
 # Log files
 *.log
