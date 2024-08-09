@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import HistoricalPrices from './HistoricalPrices';
 
 const Prices = () => {
   const [prices, setPrices] = useState([]); // State to store prices
   const [search, setSearch] = useState(''); // State to store search input
+  const [selectedSymbol, SetSelectedSytmbol] = useState('');
 
   // useEffect hook to fetch data when the component mounts
   useEffect(() => {
@@ -26,6 +28,10 @@ const Prices = () => {
   const handleSearchChange = (event) => {
     setSearch(event.target.value);
   };
+  // Handle selected symbol
+  const handleSelect = (symbol) => {
+    SetSelectedSytmbol(symbol);
+  }
 
   // Filter prices based on the search input
   const filteredPrices = prices.filter((coin) =>
@@ -43,11 +49,12 @@ const Prices = () => {
       />
       <ul>
         {filteredPrices.map((coin) => (
-          <li key={coin.id}>
+          <li key={coin.id} onClick={() => handleSelect(coin.id)}>
             {coin.name}: ${coin.current_price}
           </li>
         ))}
       </ul>
+      {selectedSymbol && <HistoricalPrices symbol={selectedSymbol} />}
     </div>
   );
 };
